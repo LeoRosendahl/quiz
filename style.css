@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;              
+    justify-content: center;    
+    align-items: center; 
+    background-color: #001e4d;
+}
+/* ---------------------S-tyle för startsidan------------------------*/
+#start-page{
+    display: flex; 
+    justify-content: center;            
+    align-items: center; 
+    text-align: center; 
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#rubrik-start {
+    border-bottom: 2px solid black;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+#fotboll {
+    background: white;
+    color: black;
+    font-weight: 500;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#fotboll:hover{
+    background: black;
+    color: white;
+}
+
+#geografi {
+    background: white;
+    color: black;
+    font-weight: 500;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#geografi:hover{
+    background: black;
+    color: white;
+}
+/*---------------------- style för quiz sidan----------------------- */
+#quiz {
+    display: flex;   
+    justify-content: center;   
+    align-items: center;  
+    text-align: center;
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#quiz h1 {
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+}
+
+#quiz h2 {
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+
+.btn {
+    background: white;
+    color: black;
+    font-weight: 500;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover:not([disabled]){
+    background: black;
+    color: white;
+
+}
+
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#fotboll-quiz, #geo-quiz {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+#nxt-f-btn, #nxt-g-btn {
+    background: black;
+    color: white;
+    font-weight: 500;
+    width: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px auto; /* Ändrad till 'auto' för att centrera */
+    border-radius: 12px;
+    cursor: pointer;
+    display: block; /* Se till att knappen är en blocknivå för centrering */
+}
+/* ger färg på rätt och fel svar */
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background: red;
+}
+
+/*----------------- style för resulaltsidan ----------------------*/
+#res-page {
+    display: flex;                 
+    align-items: center;  
+    text-align: center;
+    justify-content: center;
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.reset-button {
+    background: red;
+    color: white; /* Lägg till textfärg för bättre synlighet */
+    border: none; 
+    padding: 10px 20px;
+    border-radius: 12px; 
+    cursor: pointer; 
+    margin: 0 auto; 
+    margin-top: 5px;
+    display: block; /* Gör knappen blocknivå */
+}
+
+
+
+/* @media queries */
+@media screen and (max-width: 768px) {
+    #start-page {
+        display: flex; 
+        justify-content: center;            
+        align-items: center;
+        flex-direction: column;
+        font-size: 10px;
+    }
+
+    #quiz {
+        display: flex; 
+        justify-content: center;            
+        align-items: center;
+        flex-direction: column;
+        font-size: 10px;
+    }
+
+    #res-page {
+        display: flex; 
+        justify-content: center;            
+        align-items: center;
+        margin-bottom: 20px;
+        flex-direction: column;
+        font-size: 25px;
+    }
+}

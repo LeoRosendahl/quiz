@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Startsidan div (startsida) -->
+    <div id="start-page" style="display: block;">
+        <h1 id="rubrik-start">Welcome to my quiz page</h1>
+        <div id="quiz-choice">
+            <button id="fotboll">Fotball quiz</button>
+            <button id="geografi">Geography quiz</button>
+        </div>
+    </div>
+    <!-- App sidan/quiz sidan div (quiz sidan)-->
+    <div id="quiz" style="display: none;">
+        <!-- Fotbolls-quiz -->
+        <div id="fotboll-quiz" style="display: none;">
+            <h1>Fotbollsquiz</h1>
+            <h2 id="f-question">Question kommer synas här</h2>
+            <div id="f-options">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+                <button id="nxt-f-btn" style="display: none;">Next</button>
+        </div>
+        <!-- Geografi-quiz -->
+        <div id="geo-quiz" style="display: none;">
+            <h1>Geografi quiz</h1>
+            <h2 id="g-question">Question kommer synas här</h2>
+            <div id="g-options">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+                <button id="nxt-g-btn" style="display: none;">Next</button>
+        </div>
+    </div>
+    <!-- result page -->
+    <div id="res-page" style="display: none;"></div>
+         
+</body>
+
+</html>
