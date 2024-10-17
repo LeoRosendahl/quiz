@@ -109,6 +109,9 @@ let fQuestions = [
 
 let currentfQuestionIndex = 0;
 let score = 0;
+// tidsfunktion
+let startTime 
+
 // funktion för att starta quizet
 function startQuiz() {
     currentfQuestionIndex = 0;
@@ -116,6 +119,8 @@ function startQuiz() {
     fNxtBtn.innerHTML = "Next";
     shuffle(fQuestions);
     showfQuestion();
+    // startTime funktion
+    startTime = Date.now()
 }
 // function för shuffle/random, frågorna är i olika ordning hela tiden. 
 function shuffle(array) {
@@ -198,7 +203,7 @@ fNxtBtn.addEventListener('click', () => {
 })
 
 
-// -----------------------------------------Geografi quiz---------------------------------------------------------
+// -----------------------------------------Geografi quiz med API---------------------------------------------------------
 
 let currentQuestionIndex = 0;
 let gScore = 0;
@@ -222,6 +227,8 @@ function geoStartQuiz() {
     gScore = 0; // Reset poäng
     gNxtBtn.innerHTML = "Next";
     showgQuestion(); // Visa första frågan
+    // startTime funktion
+    startTime = Date.now()
 }
 
 // Funktion för att visa frågorna/alternativ 
@@ -322,7 +329,10 @@ function showResGeoPage() {
     startPage.style.display = "none";
     resPage.style.display = "block";
     resButton.style.display = "block";
-    showGeoScore();
+    // startTime / endTime
+    const endTime = Date.now()
+    const totalTime = (endTime - startTime) / 1000
+    showGeoScore(totalTime);
 }
 //Skapar showResPage funktion Ska visa oss till resultatsidan för Fotboll.
 function showResPage() {
@@ -330,19 +340,22 @@ function showResPage() {
     startPage.style.display = "none";
     resPage.style.display = "block";
     resButton.style.display = "block";
-    showScore();
+    // startTime / endTime
+    const endTime = Date.now()
+    const totalTime = (endTime - startTime) / 1000
+    showScore(totalTime);
 }
 
 //----- Skapar showScore funktion Ska visa oss till resultatet för Fotboll.
-function showScore() {
-    resPage.innerHTML = `You scored ${score} out of ${fQuestions.length}!`;
+function showScore(totalTime) {
+    resPage.innerHTML = `You scored ${score} out of ${fQuestions.length} Din tid blev ${totalTime.toFixed(2)} sekunder!`;
     resPage.appendChild(resButton); // Se till att knappen finns kvar
     fNxtBtn.style.display = "none"
 }
 
 // Skapar showGeoScore funktion Ska visa oss till resultatsidan för Geografi.
-function showGeoScore() {
-    resPage.innerHTML = `You scored ${gScore} out of ${questions.length}!`;
+function showGeoScore(totalTime) {
+    resPage.innerHTML = `You scored ${gScore} out of ${questions.length} Din tid blev ${totalTime.toFixed(2)} sekunder!`;
     resPage.appendChild(resButton); // Se till att knappen finns kvar
     gNxtBtn.style.display = "none"
 }
