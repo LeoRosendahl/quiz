@@ -209,7 +209,7 @@ async function geoquiz() {
     try {
         let response = await fetch('https://opentdb.com/api.php?amount=5&category=22&difficulty=hard&type=multiple');
         let data = await response.json();
-        questions = data.results; // Spara resultaten globalt
+        questions = data.results; 
         geoStartQuiz();
     } catch (error) {
         console.error(`Error: ${error}`);
@@ -249,7 +249,7 @@ function showgQuestion() {
     }
 }
 
-// Funktion för att hantera valda alternativ ---------------------------------------------------------------
+// Funktion för att hantera valda alternativ 
 function selectedOptions(selected, correct) {
     const isCorrect = selected === correct;
     if (isCorrect) {
@@ -260,7 +260,7 @@ function selectedOptions(selected, correct) {
     gButtons.forEach(gButton => {
         if (gButton.innerHTML === correct) {
             gButton.classList.add("correct");
-        } else {
+        } else if (gButton.innerHTML === selected) {
             gButton.classList.add("incorrect");
         }
         gButton.disabled = true; // Deaktivera alla knappar
